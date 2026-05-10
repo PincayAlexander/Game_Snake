@@ -1,0 +1,211 @@
+/* 
+   Integrantes:
+   * Pincay Baque John Alexander
+   * Zambrano Mendoza Nelson Gustavo
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Concert One', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #c4f1c9;
+}
+
+.titulo-juego {
+  color: #1a3c1e;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+}
+
+.layout-juego {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  max-width: 900px;
+  width: 95%;
+}
+
+.panel-instrucciones {
+  background: #254a2a;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.panel-instrucciones h2 {
+  color: #d8e708;
+}
+
+.teclas-img img {
+  width: 10rem;
+  height: 8rem;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.mensaje-inicio {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Contenedor del Juego */
+.contorno {
+  flex-grow: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #254a2a;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+}
+
+.game-details {
+  color: #d8e708;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 10px 15px 20px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #a7fafa;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.zona {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.zona .snake {
+  background: linear-gradient( 
+    to bottom left, #3ba805, #45c270
+  ); 
+  border: 1px solid #1a3c1e; 
+  border-radius: 30%30%/80%80%;
+  grid-area: 1 / 1;
+}
+
+.zona .snake-head {
+  background: #3eb500;
+  border-radius: 30% 70% 70% 30% / 30% 50% 50% 30%;
+  border: 1px solid #1a3c1e;
+  z-index: 5;
+  position: relative; 
+}
+
+.zona .snake-head::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  border-radius: 50%;
+  top: 25%;
+  right: 20%;
+}
+
+.zona .food {
+  border-radius: 50%;
+  background: radial-gradient(#f05e5e, darkred);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  grid-area: 4 / 4;
+}
+
+/* Pantalla de Perdiste */
+.pantalla-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  transition: all 0.3s ease; 
+}
+
+.pantalla-overlay h2 {
+  color: #ff4a4a;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.pantalla-overlay p {
+  color: #55e502;
+  font-size: 1.2rem;
+  animation: parpadeo 1.5s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.controls i {
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #a7fafa;
+  width: calc(100% / 4);
+  cursor: pointer;
+  background: #1a3c1e;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .layout-juego {
+    flex-direction: column;
+    align-items: center;
+  }
+  .panel-instrucciones {
+    width: 100%;
+    padding: 15px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .teclas-img i {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  .mensaje-inicio { font-size: 1rem; }
+  .controls { display: flex; }
+}

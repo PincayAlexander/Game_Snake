@@ -1,0 +1,57 @@
+<!-- 
+  Integrantes:
+  * Pincay Baque John Alexander
+  * Zambrano Mendoza Nelson Gustavo
+-->
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E3F2FD" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="serpiente.ico">
+  <title>Snake Game Cloud</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  
+  <h1 class="titulo-juego">Snake Game</h1>
+
+  <div class="layout-juego">
+    <div class="panel-instrucciones">
+      <h2>Controles</h2>
+      <div class="teclas-img">
+        <img src="teclas.png" alt="telas de flechas">
+      </div>
+      <p class="mensaje-inicio">Mueva las flechas del teclado para iniciar a jugar</p>
+    </div>
+
+    <div class="contorno">
+      <div class="game-details">
+        <span class="score">Puntuación: 0</span>
+        <span class="high-score">Record: 0</span>
+      </div>
+
+      <div class="board-wrapper">
+        <div class="zona"></div>
+        <div id="pantalla-perdiste" class="pantalla-overlay">
+          <h2>¡PERDISTE!</h2>
+          <p>Mueve una flecha para volver a intentar</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+        <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+        <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+        <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
