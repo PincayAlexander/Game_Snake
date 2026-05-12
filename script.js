@@ -53,7 +53,6 @@ const changeDirection = e => {
     const teclasValidas = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
     if (!teclasValidas.includes(e.key)) return;
 
-    // Si es el primer movimiento, iniciamos el intervalo
     if (!juegoIniciado) {
         juegoIniciado = true;
         clearInterval(setIntervalId);
