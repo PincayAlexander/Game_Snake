@@ -1,7 +1,7 @@
 /* 
    Integrantes:
    * Pincay Baque John Alexander
-   * Zambrano Mendoza Nelson Gustavo
+   * Zambrano Basurto Joseph Bryan
 */
 
 const playBoard = document.querySelector(".zona");
